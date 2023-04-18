@@ -1,0 +1,68 @@
+﻿<Window x:Class="SIMS_Projekat.View.GuideWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SIMS_Projekat.View"
+        mc:Ignorable="d"
+        Title="GuideWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="401*"/>
+            <ColumnDefinition Width="399*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Vertical" Height="436">
+
+                <Label FontSize="20">Create Tour</Label>
+                <Label Content="Name:"/>
+                <TextBox Text="{Binding Path=TourName}"  Height="30" Width="150" FontSize="16"></TextBox>
+                <Label Content="City:"/>
+                <TextBox Text="{Binding Path=City}" Height="30" Width="150" FontSize="16"></TextBox>
+                <Label Content="Country:"/>
+                <TextBox Text="{Binding Path=Country}" Height="30" Width="150" FontSize="16"></TextBox>
+                <Label Content="Description:"/>
+                <TextBox Text="{Binding Path=Description}" Height="30" Width="150" FontSize="16"></TextBox>
+                <Label Content="Language:"/>
+                <TextBox Text="{Binding Path=TourLanguage}" Height="30" Width="150" FontSize="16"></TextBox>
+                <Label Content="GuestMax:"/>
+                <TextBox Text="{Binding Path=GuestMax}" Height="30" Width="150" FontSize="16"></TextBox>
+                <Label Content="Key Points on tour::"/>
+                <TextBox Text="{Binding Path=KeyPoints}" Height="30" Width="150" FontSize="16"></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="215">
+                <Label Content="Duration(in hours):" Width="160"/>
+                <TextBox Text="{Binding Path=Duration}" Height="30" Width="150" FontSize="16"/>
+                <Label Content="ImageURLs:" Width="157"/>
+                <TextBox Text="{Binding Path=ImageURLs}" Height="29" Width="146" FontSize="12" TextWrapping="Wrap" AcceptsReturn="True"
+  VerticalScrollBarVisibility="Visible"/>
+                <Label Content="Datumi odrzavanja tura:" Width="164"/>
+                <TextBox Text="{Binding Path=StartDate}" Height="30" Width="150" FontSize="16"/>
+                
+                <Button Click="CreateTourClick" Width="75" Height="30" Margin="0,10,0,0" Content="Create tour"/>
+            </StackPanel>
+            <StackPanel Width="436" Height="430">
+                <Label FontSize="15" Width="216" Content="Select a tour you want to start:"/>
+                <ComboBox Width="253" ItemsSource="{Binding Path=TodayTours}" DisplayMemberPath="Name" SelectedValue="{Binding Path=StartTour}" IsSynchronizedWithCurrentItem="True"/>
+                <Button Click="StartTourClick" Content="Start tour" Width="64"/>
+                <Label FontSize="15" Width="172" Content="End current active tour:"/>
+                <Button Click="EndTourClick" Content="End tour" Width="64"/>
+                <Label FontSize="15" Width="230" Content="Select a guest you want to invite:"/>
+                <ComboBox Width="187" ItemsSource="{Binding Path=UsersOnActiveTour}" DisplayMemberPath="Username" SelectedValue="{Binding Path=SelectedGuest}" IsSynchronizedWithCurrentItem="True"/>
+                <Button Click="InviteGuestClick" Content="Invite guest" Width="64"/>
+            </StackPanel>
+
+
+
+
+        </StackPanel>
+        
+
+
+
+
+
+
+    </Grid>
+</Window>

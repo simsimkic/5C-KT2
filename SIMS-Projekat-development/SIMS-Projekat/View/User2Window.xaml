@@ -1,0 +1,42 @@
+﻿<Window x:Class="SIMS_Projekat.View.User2Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SIMS_Projekat.View"
+        mc:Ignorable="d"
+        Title="GuestWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Horizontal" Margin="0,0,10,0" >
+            <StackPanel Orientation="Vertical">
+                <Label FontSize="16">Make reservation</Label>
+                <Label Content="ReservationTourId:"></Label>
+                <TextBox Text="{Binding Path=TourId}" Height="30" Width="150" FontSize="16"></TextBox>
+                <Label Content="ReservationGuestId:"></Label>
+                <TextBox Text="{Binding Path=ReservationGuestId}" Height="30" Width="150" FontSize="16"></TextBox>
+                <Label Content="ReservationGuestNumber:"></Label>
+                <TextBox Text="{Binding Path=ReservationGuestNumber}" Height="30" Width="150" FontSize="16"></TextBox>
+                <Button Click="Reserve" Width="75" Height="30" Margin="0,10,0,0">Reserve</Button>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Margin="30,0,0,0">
+                <Label FontSize="16" >Filter tours</Label>
+                <Label Content="City:" ></Label>
+                <TextBox Text="{Binding Path=City}" Height="30" Width="150" FontSize="16"></TextBox>
+                <Label Content="Country"></Label>
+                <TextBox Text="{Binding Path=Country}" Height="30" Width="150" FontSize="16"></TextBox>
+                <Label Content="Language"></Label>
+                <TextBox Text="{Binding Path=Lang}" Height="30" Width="150" FontSize="16"></TextBox>
+                <Label Content="GuestNumber"></Label>
+                <TextBox Text="{Binding Path=GuestNumber}" Height="30" Width="150" FontSize="16" ></TextBox>
+                <Label Content="Duration: "></Label>
+                <TextBox Text="{Binding Path=Duration}" ></TextBox>
+                <Button Click="Search" Width="75" Height="30" Margin="0,10,0,0">Search</Button>
+            </StackPanel>
+
+            
+            
+        </StackPanel>
+
+    </Grid>
+</Window>
